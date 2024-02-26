@@ -94,7 +94,7 @@ const numberArray = [101, 22, 33];
 numberArray.unshift(11);
 numberArray.push(55);
 numberArray.splice(1,1);
-numberArray.splice(3, 0, 44);
+numberArray.splice(numberArray.length-1, 0, 44);
 console.log(numberArray); // [11, 22, 33, 44, 55]
 
 // 13. Definieer een functie getNumbers(arr).
@@ -109,6 +109,12 @@ function getNumbers(arr) {
     }
   });
   return result;
+}
+
+for (const element of arr) {
+  if (typeof element === "number") {
+    result.push(element)
+  }
 }
 
 const vanalles = [1, 40, 'bob', [], false, 89];
